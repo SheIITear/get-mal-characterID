@@ -44,7 +44,7 @@ func main() {
 	characterq := url.QueryEscape(os.Args[1])
 	resp, err := http.Get("https://myanimelist.net/search/prefix.json?keyword=" + characterq + "&type=all")
 	if err != nil {
-		// handle err
+		fmt.Println(err.Error())
 	}
 	defer resp.Body.Close()
 	kk, err := ioutil.ReadAll(resp.Body)
